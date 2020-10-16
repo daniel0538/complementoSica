@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import React from 'react';
+import Modulo from './componentes/seleccionModulo'
+import './styles/estilos.css'
+
+function App(){
+
+    return (
+      <div className='estilo2'>
+      <img style={{width:'700px'}} src='https://www.comsistelco.com/assets/images/logo_web.png'/>
+      <div className='estilo1'> 
+        <Modulo/>
+      </div>
+      </div> 
+    );
+    }
+
+
 
 export default App;
+
