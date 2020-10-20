@@ -1,0 +1,72 @@
+.contenedor-formulario {
+    align-items: center;
+    background-color: teal;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    height: 300px;
+}
+
+.contenedor-general {
+    background-color: rgb(185, 184, 184);
+    padding: 30px;
+    border-radius: 20px;
+    width: 500px;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.titulo {
+    font-family: sans-serif;
+    color: white;
+    margin-top: 30px;
+    background-color: teal;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.boton {
+    font-family: sans-serif;
+    font-size: 17px;
+    border-radius: 8px;
+    border-style: none;
+    width: 90px;
+    margin: 20px;
+}
+
+.entrada {
+    font-family: sans-serif;
+    background-color: white;
+    margin: 20px;
+    padding: 5px;
+    height: auto;    
+}
+
+.selec-modulo {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 30px;
+}
+
+.elejidos {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    background-color: teal;
+    border-radius: 8px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.imagen {
+    text-align: center;
+}
+.imagen3 {
+    text-align: center;
+}
+.imagen2{
+    
+    height: 80px;
+    width: 300px;
+    position: -webkit-sticky;
+}

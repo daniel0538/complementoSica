@@ -6,10 +6,9 @@ import './styles/estilos.css'
 function App(){
 
     return (
-      <div className='estilo2'>
-      <img style={{width:'700px'}} src='https://www.comsistelco.com/assets/images/logo_web.png'/>
-      <div className='estilo1'> 
-        <Modulo/>
+      <div>
+      <div className='contenedor-general'> 
+      <Modulo/>
       </div>
       </div> 
     );
@@ -19,3 +18,4 @@ function App(){
 
 export default App;
 
+// 

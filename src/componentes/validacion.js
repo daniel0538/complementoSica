@@ -157,13 +157,13 @@ function Validar(nombreModulo, nombreActividad, encabezadosTodos) {
                     "|",
                     83,
                     "|",
-                    ,
+                    undefined,
                     "|",
-                    ,
+                    undefined,
                     "|",
-                    ,
+                    undefined,
                     "|",
-                    ,
+                    undefined,
                     "|",
                     "co79659001",
                     "|",
@@ -1873,11 +1873,28 @@ function Validar(nombreModulo, nombreActividad, encabezadosTodos) {
                 [
                     "Workertag",
                     "feb",
+                    undefined,
                     "mar",
+                    undefined,
+                    undefined,
+                    undefined,
                     "abr",
+                    undefined,
                     "may",
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
                     "jun",
+                    undefined,
+                    undefined,
+                    undefined,
                     "jul",
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
+                    undefined,
                     "Total general"
                 ]
             ],
@@ -2256,19 +2273,18 @@ function Validar(nombreModulo, nombreActividad, encabezadosTodos) {
             ]
         },
     };
+
     let validacionEncabezados;
     const encabezadosPredeterminados = []
     encabezadosPredeterminados.push(...headers[nombreModulo][nombreActividad])
-    for (let i = 0; i < encabezadosTodos.length && encabezadosPredeterminados.length; i++) {
-
+    console.log(encabezadosTodos+'        '+ encabezadosPredeterminados)
+    if(headers[nombreModulo][nombreActividad] !== undefined){
+        
+        for (let i = 0; i < encabezadosTodos.length && encabezadosPredeterminados.length; i++) {
         let celdasActuales = encabezadosTodos[i], celdasPredeterminadas = encabezadosPredeterminados[i];
-
         if (celdasActuales.length === celdasPredeterminadas.length) {
-
             for (let j = 0; j < celdasActuales.length; j++) {
-
                 for (let k = 0; k < celdasPredeterminadas.length; k++) {
-
                     if (celdasActuales[j] !== celdasPredeterminadas[k]) {
                         validacionEncabezados = false
                     } else {
@@ -2276,7 +2292,6 @@ function Validar(nombreModulo, nombreActividad, encabezadosTodos) {
                         break
                     }
                 }
-
                 if (validacionEncabezados === false) {
                     break
                 }
@@ -2286,11 +2301,16 @@ function Validar(nombreModulo, nombreActividad, encabezadosTodos) {
             break
         }
     };
-
     if (validacionEncabezados === true) {
         alert(`--Es valido--`)
     } else {
         alert(`No es valido: las celdas no coinciden`)
-    };
+    }
+
+    }else{
+        alert('no valido')
+    }
+        
+    
 };
 export default Validar
