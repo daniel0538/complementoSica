@@ -1,9 +1,9 @@
-const headers = require('./encabezados')
+import {headers} from './encabezados'
 function Validar(nombreModulo, nombreActividad, encabezadosTodos) {
 
     let validacionEncabezados;
     const encabezadosPredeterminados = []
-    encabezadosPredeterminados.push(...headers.headers[nombreModulo][nombreActividad])
+    encabezadosPredeterminados.push(...headers[nombreModulo][nombreActividad])
 
     for (let i = 0; i < encabezadosTodos.length && encabezadosPredeterminados.length; i++) {
         let celdasActuales = encabezadosTodos[i], celdasPredeterminadas = encabezadosPredeterminados[i];
@@ -11,6 +11,7 @@ function Validar(nombreModulo, nombreActividad, encabezadosTodos) {
             for (let j = 0; j < celdasActuales.length; j++) {
                 for (let k = 0; k < celdasPredeterminadas.length; k++) {
                     if (celdasActuales[j] !== celdasPredeterminadas[k]) {
+                        console.log(celdasActuales[j] , celdasPredeterminadas[k])
                         validacionEncabezados = false
                     } else {
                         validacionEncabezados = true

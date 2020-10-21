@@ -7,6 +7,9 @@
     border-radius: 5px;
     height: 300px;
 }
+.contenedor-formulario:hover{
+    background-color: rgba(0, 128, 128, 0.74); ;
+}
 
 .contenedor-general {
     background-color: rgb(185, 184, 184);
@@ -37,6 +40,7 @@
 }
 .boton:hover{
     background-color: rgba(0, 191, 205, 0.589);
+    color: whitesmoke;
 }
 .entrada {
     font-family: sans-serif;

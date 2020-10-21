@@ -26,7 +26,6 @@ class Modulo extends Component {
     const page =
       <div className='imagen'>
         <img alt='Logo comsistelco' className='imagen2' src='https://www.comsistelco.com/assets/images/logo_web.png' />
-        {/*style={{ width: '400px' }}*/}
         <h1 className='titulo'>Valide el archivo</h1>
         <div className='contenedor-formulario'>
           <form>

@@ -42,6 +42,7 @@ class ExcelToJson extends React.Component {
             this.setState({ data: data });
             encabezadosTodos.push(this.state.data[0])
           }
+          console.log(encabezadosTodos[0])
           Validar(this.props.modulo, this.state.file.name, encabezadosTodos)
 
         } catch (error) {
@@ -65,8 +66,6 @@ class ExcelToJson extends React.Component {
     const page =
       <div><br />
         <TextField
-          // style={{color:'white'}}className='entrada'
-          className='archivo'
           type="file"
           onChange={this.handleChange}
           required
@@ -77,6 +76,7 @@ class ExcelToJson extends React.Component {
           value="Validar"
           onClick={this.handleFile}
         />
+        <p style={{ fontFamily: "sans-serif", color: "white" }}>{this.props.modulo}| {this.state.file.name}</p>
       </div>
 
     if (this.state.error) {
