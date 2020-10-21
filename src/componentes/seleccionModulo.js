@@ -26,12 +26,12 @@ class Modulo extends Component {
     const page =
       <div className='imagen'>
         <img alt='Logo comsistelco' className='imagen2' src='https://www.comsistelco.com/assets/images/logo_web.png' />
-        <h1 className='titulo'>Valide el archivo</h1>
+        <h2 className='titulo'>Valide el archivo</h2>
         <div className='contenedor-formulario'>
           <form>
             <InputLabel style={{ color: 'white' }} id="demo-controlled-open-select-label">Seleccione un modulo</InputLabel>
             <Select labelId="demo-controlled-open-select-label"
-              style={{width: '300px' }}
+              className='select'
               value={this.state.value}
               onChange={this.definirValue}
               required>
