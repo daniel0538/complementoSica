@@ -1,17 +1,17 @@
 .contenedor-formulario {
     align-items: center;
-    background-color: teal;
+    background-color: rgba(0, 128, 128, 0.774);
     display: flex;
     justify-content: center;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 5px;
     height: 300px;
 }
 
 .contenedor-general {
     background-color: rgb(185, 184, 184);
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 5px;
     width: 500px;
     margin-top: 10%;
     margin-left: auto;
@@ -22,8 +22,8 @@
     font-family: sans-serif;
     color: white;
     margin-top: 30px;
-    background-color: teal;
-    border-radius: 15px;
+    background-color: rgba(0, 128, 128, 0.726);
+    border-radius: 5px;
     text-align: center;
 }
 
@@ -35,7 +35,9 @@
     width: 90px;
     margin: 20px;
 }
-
+.boton:hover{
+    background-color: rgba(0, 191, 205, 0.589);
+}
 .entrada {
     font-family: sans-serif;
     background-color: white;

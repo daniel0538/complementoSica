@@ -34,7 +34,8 @@ class Modulo extends Component {
             <Select labelId="demo-controlled-open-select-label"
               style={{ width: '300px' }}
               value={this.state.value}
-              onChange={this.definirValue} required>
+              onChange={this.definirValue}
+              className='selec' required>
               <MenuItem value='Analisis'>Analisis </MenuItem>
               <MenuItem value='Balance macromedicion'> Balance macromedicion</MenuItem>
               <MenuItem value='Hallazgos'> Hallazgos</MenuItem>
@@ -43,7 +44,7 @@ class Modulo extends Component {
               <MenuItem value='Novedades'>Novedades </MenuItem>
               <MenuItem value='Storia'> Storia</MenuItem>
             </Select><br />
-            <ExcelToJson modulo={this.state.value}/>
+            <ExcelToJson modulo={this.state.value} />
           </form>
         </div>
       </div>;

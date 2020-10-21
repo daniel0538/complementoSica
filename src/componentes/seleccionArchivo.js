@@ -27,56 +27,62 @@ class ExcelToJson extends React.Component {
 
   handleFile() {
     const reader = new FileReader();
-    const leerArchivo = !!reader.readAsBinaryString;
+    const lecturaDelArchivo = !!reader.readAsBinaryString;
     const encabezadosTodos = []
 
     try {
       reader.onload = (e) => {
-        const bstr = e.target.result;
-        const wb = XLSX.read(bstr, { type: leerArchivo ? 'binary' : 'array', bookVBA: true });
-        for (let i = 0; i < wb.SheetNames.length; i++) {
-          const wsname = wb.SheetNames[i];
-          const ws = wb.Sheets[wsname];
-          const data = XLSX.utils.sheet_to_json(ws, { header: 1 });
-          this.setState({ data: data });
-          encabezadosTodos.push(this.state.data[0])
+        try {
+          const archivo = e.target.result;
+          const hojasArchivo = XLSX.read(archivo, { type: lecturaDelArchivo ? 'binary' : 'array', bookVBA: true });
+          for (let i = 0; i < hojasArchivo.SheetNames.length; i++) {
+            const hoja = hojasArchivo.SheetNames[i];
+            const encabezadosPorHoja = hojasArchivo.Sheets[hoja];
+            const data = XLSX.utils.sheet_to_json(encabezadosPorHoja, { header: 1 });
+            this.setState({ data: data });
+            encabezadosTodos.push(this.state.data[0])
+          }
+          Validar(this.props.modulo, this.state.file.name, encabezadosTodos)
+
+        } catch (error) {
+          this.setState({ error })
+          alert('no se encontro ' + this.state.file.name + ' en el modulo ' + this.props.modulo)
         }
-        Validar(this.props.modulo, this.state.file.name, encabezadosTodos)
-      
-      }; if (leerArchivo) {
+
+      };
+      if (lecturaDelArchivo) {
         reader.readAsBinaryString(this.state.file);
       } else {
         reader.readAsArrayBuffer(this.state.file);
       };
-    }catch (error) {
+    } catch (error) {
       this.setState({ error })
     }
-     
-     
+
   }
 
   render() {
     const page =
-    <div><br/>
-          <TextField
-            // style={{color:'white'}}className='entrada'
-            className='archivo'
-            type="file"
-            onChange={this.handleChange}
-            required
-          />
-          <br/><br/>
-          <input type='submit'
-            className="boton"
-            value="Validar"
-            onClick={this.handleFile}
-          />
+      <div><br />
+        <TextField
+          // style={{color:'white'}}className='entrada'
+          className='archivo'
+          type="file"
+          onChange={this.handleChange}
+          required
+        />
+        <br /><br />
+        <input type='submit'
+          className="boton"
+          value="Validar"
+          onClick={this.handleFile}
+        />
       </div>
 
     if (this.state.error) {
       return (page)
     }
-      return (page)
+    return (page)
   }
 }
 
