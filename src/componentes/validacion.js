@@ -11,7 +11,6 @@ function Validar(nombreModulo, nombreActividad, encabezadosTodos) {
             for (let j = 0; j < celdasActuales.length; j++) {
                 for (let k = 0; k < celdasPredeterminadas.length; k++) {
                     if (celdasActuales[j] !== celdasPredeterminadas[k]) {
-                        console.log(celdasActuales[j] , celdasPredeterminadas[k])
                         validacionEncabezados = false
                     } else {
                         validacionEncabezados = true

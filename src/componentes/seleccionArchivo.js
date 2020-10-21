@@ -21,9 +21,8 @@ class ExcelToJson extends React.Component {
 
   handleChange(e) {
     const files = e.target.files;
-    if (files && files[0]) this.setState({ file: files[0] });
+     this.setState({ file: files[0] });
   };
-
 
   handleFile() {
     const reader = new FileReader();
@@ -42,22 +41,21 @@ class ExcelToJson extends React.Component {
             this.setState({ data: data });
             encabezadosTodos.push(this.state.data[0])
           }
-          console.log(encabezadosTodos[0])
           Validar(this.props.modulo, this.state.file.name, encabezadosTodos)
 
-        } catch (error) {
-          this.setState({ error })
-          alert('no se encontro ' + this.state.file.name + ' en el modulo ' + this.props.modulo)
-        }
+            } catch (error) {
+              this.setState({ error })
+              alert('no se encontro ' + this.state.file.name + ' en el modulo ' + this.props.modulo)
+          }
 
       };
-      if (lecturaDelArchivo) {
-        reader.readAsBinaryString(this.state.file);
-      } else {
-        reader.readAsArrayBuffer(this.state.file);
-      };
-    } catch (error) {
-      this.setState({ error })
+          if (lecturaDelArchivo) {
+            reader.readAsBinaryString(this.state.file);
+          } else {
+            reader.readAsArrayBuffer(this.state.file);
+          };
+      } catch (error) {
+        this.setState({ error })
     }
 
   }
@@ -68,21 +66,23 @@ class ExcelToJson extends React.Component {
         <TextField
           type="file"
           onChange={this.handleChange}
-          required
-        />
-        <br /><br />
-        <input type='submit'
+          required/><br/><br/>
+        <input 
+          type='submit'
           className="boton"
           value="Validar"
-          onClick={this.handleFile}
-        />
-        <p style={{ fontFamily: "sans-serif", color: "white" }}>{this.props.modulo}| {this.state.file.name}</p>
+          onClick={this.handleFile}/>
+
+        <p style={{ fontFamily: "sans-serif", color: "white" }}>
+          {this.props.modulo} | {this.state.file.name}
+        </p>
+
       </div>
 
     if (this.state.error) {
       return (page)
     }
-    return (page)
+      return (page)
   }
 }
 

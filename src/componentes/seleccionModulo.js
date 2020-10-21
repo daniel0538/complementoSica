@@ -31,10 +31,10 @@ class Modulo extends Component {
           <form>
             <InputLabel style={{ color: 'white' }} id="demo-controlled-open-select-label">Seleccione un modulo</InputLabel>
             <Select labelId="demo-controlled-open-select-label"
-              style={{ width: '300px' }}
+              style={{width: '300px' }}
               value={this.state.value}
               onChange={this.definirValue}
-              className='selec' required>
+              required>
               <MenuItem value='Analisis'>Analisis </MenuItem>
               <MenuItem value='Balance macromedicion'> Balance macromedicion</MenuItem>
               <MenuItem value='Hallazgos'> Hallazgos</MenuItem>
