@@ -47,7 +47,6 @@ class ExcelToJson extends React.Component {
               this.setState({ error })
               alert('no se encontro ' + this.state.file.name + ' en el modulo ' + this.props.modulo)
           }
-
       };
           if (lecturaDelArchivo) {
             reader.readAsBinaryString(this.state.file);
@@ -57,7 +56,6 @@ class ExcelToJson extends React.Component {
       } catch (error) {
         this.setState({ error })
     }
-
   }
 
   render() {

@@ -29,8 +29,8 @@ class Modulo extends Component {
         <h2 className='titulo'>Valide el archivo</h2>
         <div className='contenedor-formulario'>
           <form>
-            <InputLabel style={{ color: 'white' }} id="demo-controlled-open-select-label">Seleccione un modulo</InputLabel>
-            <Select labelId="demo-controlled-open-select-label"
+            <InputLabel style={{ color: 'white' }} id="label">Seleccione un modulo</InputLabel>
+            <Select labelId="label"
               className='select'
               value={this.state.value}
               onChange={this.definirValue}

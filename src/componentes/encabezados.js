@@ -2,8 +2,8 @@ exports.headers = {
     Analisis: {
         "asignacion.xlsx": [
             [
-                "NÚMERO_DE_",
                 "CLASIFICACION_FINAL",
+                "NÚMERO_DE_",
                 "NRO_CUENTA",
                 "SERVICIO_ELÉCTRICO",
                 "FECHA_DE_OPERACIÓN_EN_TERRENO",
