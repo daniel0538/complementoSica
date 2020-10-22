@@ -13,6 +13,7 @@ class ExcelToJson extends React.Component {
       error: null,
       file: {},
       data: [],
+      separador:''
     }
 
     this.handleFile = this.handleFile.bind(this);
@@ -22,13 +23,13 @@ class ExcelToJson extends React.Component {
   handleChange(e) {
     const files = e.target.files;
     this.setState({ file: files[0] });
+    this.setState({separador:'|'})
   };
 
   handleFile() {
     const reader = new FileReader();
     const lecturaDelArchivo = !!reader.readAsBinaryString;
     const encabezadosTodos = []
-
     try {
       reader.onload = (e) => {
         try {
@@ -71,10 +72,9 @@ class ExcelToJson extends React.Component {
           value="Validar"
           onClick={this.handleFile}/>
 
-        <p style={{ fontFamily: "sans-serif", color: "white" }}>
-          {this.props.modulo} | {this.state.file.name}
+        <p style={{ fontFamily:'Arial', color:'rgb(218, 214, 214)'}}>
+          {this.props.modulo} {this.state.separador} {this.state.file.name}
         </p>
-
       </div>
 
     if (this.state.error) {

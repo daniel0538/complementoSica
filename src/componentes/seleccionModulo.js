@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import ExcelToJson from './seleccionArchivo'
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
+
+import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import '../styles/estilos.css'
 import '../styles/styles.css'
@@ -29,8 +31,10 @@ class Modulo extends Component {
         <h2 className='titulo'>Valide el archivo</h2>
         <div className='contenedor-formulario'>
           <form>
-            <InputLabel style={{ color: 'white' }} id="label">Seleccione un modulo</InputLabel>
+          <FormControl >
+          <InputLabel style={{color:'rgb(218, 214, 214)'}} id="label">Seleccione un modulo</InputLabel>
             <Select labelId="label"
+            style={{color:'rgb(218, 214, 214)'}}
               className='select'
               value={this.state.value}
               onChange={this.definirValue}
@@ -43,6 +47,7 @@ class Modulo extends Component {
               <MenuItem value='Novedades'>Novedades </MenuItem>
               <MenuItem value='Storia'> Storia</MenuItem>
             </Select><br />
+          </FormControl>
             <ExcelToJson modulo={this.state.value} />
           </form>
         </div>
@@ -50,5 +55,4 @@ class Modulo extends Component {
     return (page)
   }
 }
-
 export default Modulo
