@@ -21,7 +21,7 @@ class ExcelToJson extends React.Component {
 
   handleChange(e) {
     const files = e.target.files;
-     this.setState({ file: files[0] });
+    this.setState({ file: files[0] });
   };
 
   handleFile() {
